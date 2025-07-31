@@ -1,9 +1,11 @@
 import MainButton from "@/components/ui/buttons/MainButton";
 import OutlineButton from "@/components/ui/buttons/OutlineButton";
 import ScrollAnimation from "@/components/ui/ScrollAnimation";
-import homeContent from "@content/homeContent.js";
+import { useAuthContext } from "@/features/auth/context/AuthProvider";
+import homeContent from "@content/landing/homeContent";
 
 function HeroSection() {
+  const { user } = useAuthContext();
   return (
     <>
       <div className="absolute inset-0 bg-white/80 dark:bg-slate-950/95 max-h-[720px] "></div>
@@ -19,18 +21,20 @@ function HeroSection() {
             <p className="mt-6 text-slate-500 dark:text-slate-300">
               {homeContent.hero.description}
             </p>
-            <div className="w-max">
-              <div className="flex gap-4 mt-8 max-lg:mb-8 max-sm:flex-col">
-                <MainButton
-                  to={"/auth/register"}
-                  text={homeContent.hero.buttons.account}
-                />
-                <OutlineButton
-                  to={"/guest"}
-                  text={homeContent.hero.buttons.geust}
-                />
+            {!user && (
+              <div className="w-max">
+                <div className="flex gap-4 mt-8 max-lg:mb-8 max-sm:flex-col">
+                  <MainButton
+                    to={"/auth/register"}
+                    text={homeContent.hero.buttons.account}
+                  />
+                  <OutlineButton
+                    to={"/guest"}
+                    text={homeContent.hero.buttons.geust}
+                  />
+                </div>
               </div>
-            </div>
+            )}
             <ScrollAnimation />
           </div>
         </div>

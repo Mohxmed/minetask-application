@@ -1,5 +1,5 @@
 import StaticPagesLayout from "@layouts/StaticPagesLayout";
-import faqContent from "@/content/faqContent";
+import faqContent from "@/content/landing/faqContent";
 import { FaQuestion } from "react-icons/fa6";
 
 const FaqPage = () => {

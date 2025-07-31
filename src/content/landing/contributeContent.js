@@ -34,7 +34,7 @@ const contributeContent = {
       description:
         "If you want to stay updated, suggest ideas, or just say hi — join the discussion on GitHub.",
       buttonText: "Go to GitHub Repo",
-      githubUrl: "https://github.com/your-username/Minetask", // ← غيّرها بالرابط الحقيقي
+      githubUrl: "https://github.com/Mohxmed/minetask-application",
     },
   ],
 };

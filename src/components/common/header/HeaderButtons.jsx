@@ -5,7 +5,7 @@ import MainButton from "@/components/ui/buttons/MainButton";
 import OutlineButton from "@/components/ui/buttons/OutlineButton";
 import DarkModeButton from "@/components/ui/buttons/DarkModeButton";
 import UserWindow from "@/components/layout/user-bar/UserWindow";
-import content from "@content/headerContent";
+import content from "@content/landing/headerContent";
 import ButtonIcon from "@/components/ui/buttons/ButtonIcon";
 
 function HeaderButtons({ isOpen, setIsOpen }) {

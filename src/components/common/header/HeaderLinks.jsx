@@ -1,5 +1,5 @@
 import HeaderLink from "./HeaderLink";
-import content from "@content/headerContent";
+import content from "@content/landing/headerContent";
 
 function NavLinks() {
   const navLinks = content.navLinks;

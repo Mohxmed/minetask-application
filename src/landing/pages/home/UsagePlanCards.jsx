@@ -1,7 +1,7 @@
 import PlanCard from "@/components/ui/cards/PlanCard";
 import MainButton from "@components/ui/buttons/MainButton";
 import OutlineButton from "@components/ui/buttons/OutlineButton";
-import homeContent from "@content/homeContent";
+import homeContent from "@content/landing/homeContent";
 import { motion } from "framer-motion";
 
 const containerVariants = {

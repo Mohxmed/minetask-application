@@ -1,5 +1,5 @@
 import MainHeading from "@components/ui/typography/MainHeading";
-import homeContent from "@/content/homeContent";
+import homeContent from "@/content/landing/homeContent";
 import UsagePlanCards from "./UsagePlanCards";
 
 function StartNow() {

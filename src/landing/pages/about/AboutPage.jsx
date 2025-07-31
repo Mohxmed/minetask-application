@@ -1,5 +1,5 @@
 import StaticPagesLayout from "@layouts/StaticPagesLayout";
-import aboutContent from "@/content/aboutContent";
+import aboutContent from "@/content/landing/aboutContent";
 import { FaLaptopCode, FaRegStar } from "react-icons/fa";
 import { TbMoodCrazyHappy } from "react-icons/tb";
 

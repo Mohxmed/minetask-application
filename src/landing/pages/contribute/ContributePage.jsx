@@ -1,5 +1,5 @@
 import StaticPagesLayout from "@layouts/StaticPagesLayout";
-import contributeContent from "@content/contributeContent";
+import contributeContent from "@content/landing/contributeContent";
 
 const ContributePage = () => {
   return (
