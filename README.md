@@ -25,7 +25,7 @@
 
 ---
 
-##g Getting Started
+## Getting Started
 
 Clone the project and run locally:
 
