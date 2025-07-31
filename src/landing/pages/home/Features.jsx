@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import MainHeading from "@components/ui/typography/MainHeading";
-import homeContent from "@/content/landing/homeContent";
+import homeContent from "@content/landing/homeContent";
 import FeatureCard from "@/components/ui/cards/FeatureCard";
 
 const containerVariants = {
