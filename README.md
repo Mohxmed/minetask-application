@@ -1,10 +1,10 @@
-# 📝 MiniTask
+# MiniTask
 
 **MiniTask** is a simple yet powerful task management app that helps you break down large projects into smaller, manageable tasks. Designed especially for freelancers and solo developers to stay focused and organized.
 
 ---
 
-## 🚀 Features
+## Features
 
 - Create and manage personal projects
 - Break each project into smaller subtasks
@@ -14,18 +14,18 @@
 
 ---
 
-## 🧱 Tech Stack
+## Tech Stack
 
 - React
 - TailwindCSS
 - Material UI (MUI)
 - Context API
-- Firebase (for auth or database)
+- Firebase (Authentication / Firestore)
 - Vite (for development and build)
 
 ---
 
-## ⚙️ Getting Started
+##g Getting Started
 
 Clone the project and run locally:
 
