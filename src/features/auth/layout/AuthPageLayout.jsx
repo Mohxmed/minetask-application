@@ -1,10 +1,21 @@
 import { Link } from "react-router";
 import AppLogo from "@/components/ui/logo/AppLogo";
 
-function AuthPageLayout({ heading, link, linkHref, linkIcon, children }) {
+function AuthPageLayout({
+  heading,
+  link,
+  linkHref,
+  linkIcon,
+  children,
+  reverse = false,
+}) {
   return (
-    <div className="dark:bg-slate-900 min-h-screen w-full flex flex-col sm:flex-row max-sm:bg-primary max-sm:pattern max-sm:items-center">
-      <div className="bg-primary dark:bg-slate-950/20 pattern flex items-center justify-center w-full lg:w-3/5 sm:w-1/2 p-6 max-sm:mt-6 sm:min-h-screen">
+    <div
+      className={`dark:bg-black min-h-screen w-full flex flex-col max-sm:bg-primary max-sm:pattern max-sm:items-center ${
+        reverse ? "sm:flex-row-reverse" : "sm:flex-row"
+      }`}
+    >
+      <div className="bg-primary dark:bg-slate-950 pattern flex items-center justify-center w-full lg:w-3/5 sm:w-1/2 p-6 max-sm:mt-6 sm:min-h-screen">
         <div className="text-center space-y-4">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white dark:text-white">
             {heading}

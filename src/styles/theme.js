@@ -1,17 +1,41 @@
+// theme.js
 import { createTheme } from "@mui/material/styles";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#546fff",
-      hover: "#3c54cc",
-      lowHover: "#546fff29",
-      text: "#ffffff",
+export const getTheme = (mode = "light") =>
+  createTheme({
+    palette: {
+      mode,
+      primary: {
+        main: "#546fff",
+        contrastText: "#ffffff",
+      },
+      secondary: {
+        main: "#00c55b",
+      },
+      background: {
+        default: mode === "dark" ? "#121212" : "#f9f9f9",
+        paper: mode === "dark" ? "#1e1e1e" : "#ffffff",
+      },
+      text: {
+        primary: mode === "dark" ? "#ffffff" : "#000000",
+        secondary: mode === "dark" ? "#cccccc" : "#555555",
+      },
     },
-    secondary: {
-      main: "#00c55b",
+    components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            borderRadius: 8,
+            textTransform: "none",
+          },
+        },
+      },
+      MuiPaper: {
+        styleOverrides: {
+          root: {
+            borderRadius: 12,
+          },
+        },
+      },
     },
-  },
-});
-
-export default theme;
+  });

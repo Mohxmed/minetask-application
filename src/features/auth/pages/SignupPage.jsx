@@ -1,36 +1,17 @@
-import React from "react";
 import SignupForm from "../forms/SignupForm";
-import AppLogo from "@/components/ui/logo/AppLogo";
-import { Link } from "react-router";
 import { RiEmotionLaughLine } from "react-icons/ri";
+import AuthPageLayout from "../layout/AuthPageLayout";
 
 export default function SignupPage() {
   return (
-    <div className="min-h-screen w-full flex flex-col sm:flex-row-reverse max-sm:bg-primary max-sm:pattern max-sm:items-center">
-      <div className="bg-primary pattern flex items-center justify-center w-full lg:w-3/5 sm:w-1/2 p-6 max-sm:mt-6 sm:min-h-screen">
-        <div className="text-center space-y-2">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white">
-            Let's do it!
-          </h1>
-          <Link
-            to={"/auth/login"}
-            className="text-white/80 underline flex gap-2 items-center justify-center text-sm sm:text-base"
-          >
-            <RiEmotionLaughLine />
-            Thanks, I already have one!
-          </Link>
-        </div>
-      </div>
-      <div className="relative w-11/12 lg:w-2/5 sm:w-1/2 flex items-center justify-center sm:py-16 py-2">
-        <div className="w-full max-w-2xl ">
-          <div className="absolute top-7 left-1/2 -translate-x-1/2 bg-white p-3 max-md:rounded-full max-md:shadow-md">
-            <AppLogo />
-          </div>
-          <div className="max-sm:mt-12">
-            <SignupForm />
-          </div>
-        </div>
-      </div>
-    </div>
+    <AuthPageLayout
+      reverse
+      heading={"Let's do it!"}
+      link={"Thanks, I already have one!"}
+      linkHref={"/auth/login"}
+      linkIcon={<RiEmotionLaughLine className="text-xl" />}
+    >
+      <SignupForm />
+    </AuthPageLayout>
   );
 }

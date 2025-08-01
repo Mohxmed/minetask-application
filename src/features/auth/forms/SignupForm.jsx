@@ -3,10 +3,8 @@ import useGoogleAuth from "../hooks/useGoogleAuth";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signSchema } from "../schema/schema";
-import { ThemeProvider } from "@mui/material/styles";
 import { FcGoogle } from "react-icons/fc";
 import noprofile from "@assets/user/noprofile.png";
-import theme from "@styles/theme.js";
 import {
   Button,
   TextField,
@@ -59,133 +57,131 @@ const SignupForm = () => {
   }, [watchedFile]);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Box
-        sx={{
-          mx: "auto",
-          p: 4,
-          borderRadius: 2,
-          backgroundColor: "background.paper",
-        }}
-      >
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            type="file"
-            id="file"
-            accept="image/*"
-            className="hidden"
-            {...register("image")}
-          />
-          <div className="flex gap-4 flex-row-reverse items-center">
-            {preview ? (
-              <img
-                src={preview}
-                alt="Preview"
-                className="rounded-full size-14 aspect-square object-cover"
-              />
-            ) : (
-              <img
-                src={noprofile}
-                alt="Preview"
-                className="rounded-full size-14 aspect-square object-cover"
-              />
-            )}
+    <Box
+      sx={{
+        mx: "auto",
+        p: 4,
+        borderRadius: 2,
+        backgroundColor: "background.paper",
+      }}
+    >
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+          type="file"
+          id="file"
+          accept="image/*"
+          className="hidden"
+          {...register("image")}
+        />
+        <div className="flex gap-4 flex-row-reverse items-center">
+          {preview ? (
+            <img
+              src={preview}
+              alt="Preview"
+              className="rounded-full size-14 aspect-square object-cover"
+            />
+          ) : (
+            <img
+              src={noprofile}
+              alt="Preview"
+              className="rounded-full size-14 aspect-square object-cover"
+            />
+          )}
 
-            <label htmlFor="file" className="w-full h-full">
-              <div className="border-b border-gray-500 flex items-center gap-4 hover:bg-primary/20 transition text-slate-700 px-4 py-2 cursor-pointer">
-                <BsCloudUpload className="text-primary" size={20} />
-                <div>
-                  <p className="text-xs">
-                    {fileName ? fileName : "Upload Picture (Optinal)"}
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    {size ? size + " MB" : "PNG, JPEG, WEBP Maximum 2MB"}
-                  </p>
-                </div>
+          <label htmlFor="file" className="w-full h-full">
+            <div className="border-b border-gray-500 flex items-center gap-4 hover:bg-primary/20 transition text-slate-700 px-4 py-2 cursor-pointer">
+              <BsCloudUpload className="text-primary" size={20} />
+              <div>
+                <p className="text-xs">
+                  {fileName ? fileName : "Upload Picture (Optinal)"}
+                </p>
+                <p className="text-xs text-slate-500">
+                  {size ? size + " MB" : "PNG, JPEG, WEBP Maximum 2MB"}
+                </p>
               </div>
-            </label>
-          </div>
-          {errors.image && (
-            <p className="text-red-700 text-xs">{errors.image.message}</p>
-          )}
-          <Box sx={{ display: "flex" }} gap={2}>
-            <TextField
-              label="First Name"
-              variant="standard"
-              sx={{ mt: 2 }}
-              fullWidth
-              {...register("firstName")}
-              error={!!errors.firstName}
-              helperText={errors.firstName?.message}
-            />
-            <TextField
-              label="Last Name"
-              variant="standard"
-              sx={{ mt: 2 }}
-              fullWidth
-              {...register("lastName")}
-              error={!!errors.lastName}
-              helperText={errors.lastName?.message}
-            />
-          </Box>
+            </div>
+          </label>
+        </div>
+        {errors.image && (
+          <p className="text-red-700 text-xs">{errors.image.message}</p>
+        )}
+        <Box sx={{ display: "flex" }} gap={2}>
           <TextField
-            label="Email Address"
-            type="email"
+            label="First Name"
             variant="standard"
             sx={{ mt: 2 }}
             fullWidth
-            {...register("email")}
-            error={!!errors.email}
-            helperText={errors.email?.message}
+            {...register("firstName")}
+            error={!!errors.firstName}
+            helperText={errors.firstName?.message}
           />
           <TextField
-            label="Password"
-            type="password"
+            label="Last Name"
             variant="standard"
             sx={{ mt: 2 }}
             fullWidth
-            {...register("password")}
-            error={!!errors.password}
-            helperText={errors.password?.message}
+            {...register("lastName")}
+            error={!!errors.lastName}
+            helperText={errors.lastName?.message}
           />
-
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            fullWidth
-            disabled={isLoading}
-            sx={{ mt: 2, boxShadow: 0 }}
-          >
-            {isLoading ? (
-              <CircularProgress size={20} color="inherit" />
-            ) : (
-              "Sign Up"
-            )}
-          </Button>
-          {error && (
-            <p className="text-sm text-center mt-3 text-red-500">{error}</p>
-          )}
-        </form>
-        <Divider sx={{ my: 3 }}>or</Divider>
-        <Button
-          onClick={handleGoogleSign}
-          variant="outlined"
+        </Box>
+        <TextField
+          label="Email Address"
+          type="email"
+          variant="standard"
+          sx={{ mt: 2 }}
           fullWidth
-          startIcon={gLoading ? null : <FcGoogle />}
-          disabled={gLoading}
+          {...register("email")}
+          error={!!errors.email}
+          helperText={errors.email?.message}
+        />
+        <TextField
+          label="Password"
+          type="password"
+          variant="standard"
+          sx={{ mt: 2 }}
+          fullWidth
+          {...register("password")}
+          error={!!errors.password}
+          helperText={errors.password?.message}
+        />
+
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          fullWidth
+          disabled={isLoading}
+          sx={{ mt: 2, boxShadow: 0 }}
         >
-          {gLoading ? (
+          {isLoading ? (
             <CircularProgress size={20} color="inherit" />
           ) : (
-            "Continue with Google"
+            "Sign Up"
           )}
         </Button>
-        {gError && (
-          <p className="text-sm text-center mt-3 text-red-500">{gError}</p>
+        {error && (
+          <p className="text-sm text-center mt-3 text-red-500">{error}</p>
         )}
-      </Box>
-    </ThemeProvider>
+      </form>
+      <Divider sx={{ my: 3 }}>or</Divider>
+      <Button
+        onClick={handleGoogleSign}
+        variant="outlined"
+        fullWidth
+        startIcon={gLoading ? null : <FcGoogle />}
+        disabled={gLoading}
+      >
+        {gLoading ? (
+          <CircularProgress size={20} color="inherit" />
+        ) : (
+          "Continue with Google"
+        )}
+      </Button>
+      {gError && (
+        <p className="text-sm text-center mt-3 text-red-500">{gError}</p>
+      )}
+    </Box>
   );
 };
 

@@ -1,20 +1,9 @@
-import { createBrowserRouter, RouterProvider } from "react-router";
 import AuthProvider from "@features/auth/context/AuthProvider";
-
-// Routes
-import LandingRoutes from "@routes/LandingRoutes";
-import AuthRoutes from "@routes/AuthRoutes";
-import AppRoutes from "@routes/AppRoutes";
-import UserRoutes from "@routes/UserRoutes";
 import useLocalStorage from "./hooks/useLocalStorage";
 import { useLayoutEffect } from "react";
-
-const router = createBrowserRouter([
-  LandingRoutes,
-  AuthRoutes,
-  UserRoutes,
-  AppRoutes,
-]);
+import { ThemeProvider } from "@emotion/react";
+import { getTheme } from "@styles/theme";
+import Router from "./router";
 
 export default function App() {
   // Get Color Mode status before mount
@@ -24,8 +13,10 @@ export default function App() {
   }, [isDark]);
 
   return (
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <ThemeProvider theme={getTheme(isDark ? "dark" : "light")}>
+      <AuthProvider>
+        <Router />
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
