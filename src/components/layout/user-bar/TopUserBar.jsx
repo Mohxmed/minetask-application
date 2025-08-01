@@ -11,7 +11,7 @@ export default function TopUserBar({ children, notify = false }) {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const mobileMenuRef = useRef(null);
   useClickOutside(mobileMenuRef, () => setIsOpenMenu(false));
-  const { user, isAuthReady, userData } = useAuthContext();
+  const { user, userData } = useAuthContext();
   return (
     <div ref={mobileMenuRef}>
       <div className="w-full flex justify-between border-b border-gray-200 pb-2 mb-2">

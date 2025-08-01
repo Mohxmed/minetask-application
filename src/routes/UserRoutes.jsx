@@ -1,12 +1,15 @@
-import SideNavigation from "@/components/layout/sidenav/SideNavigation";
+import LandingLayout from "@/layouts/LandingLayout";
+import Profile from "@/pages/Profile";
 
 const UserRoutes = {
   name: "application",
   path: "/user",
+  element: <LandingLayout />,
+
   children: [
     {
       index: true,
-      element: <SideNavigation />,
+      element: <Profile />,
     },
   ],
 };

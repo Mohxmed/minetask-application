@@ -10,7 +10,7 @@ function NavAllButtons({ isMinimized }) {
   return (
     <>
       <NavButton
-        to="/"
+        to="/app"
         title={"Overview"}
         isMinimized={isMinimized}
         icon={() => <CiGrid41 size={25} />}

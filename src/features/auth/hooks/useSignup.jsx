@@ -21,18 +21,18 @@ export const useSignup = () => {
     setError(null);
     setIsLoading(true);
 
-    // firebase auth
     try {
-      const credentials = await signup(email, password);
-      await updateProfile(credentials.user, {
-        displayName: `${firstName} ${lastName}`,
-      });
-
       // Upload photo to cloudinary
       let photoUrl = null;
       if (imageFile) {
         photoUrl = await uploadToCloudinary(imageFile);
       }
+      // firebase auth
+      const credentials = await signup(email, password);
+      await updateProfile(credentials.user, {
+        displayName: `${firstName} ${lastName}`,
+        photoURL: photoUrl,
+      });
 
       // Save user data to firestore
       await saveUser(

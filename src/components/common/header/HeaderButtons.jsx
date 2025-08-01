@@ -7,6 +7,7 @@ import DarkModeButton from "@/components/ui/buttons/DarkModeButton";
 import UserWindow from "@/components/layout/user-bar/UserWindow";
 import content from "@content/landing/headerContent";
 import ButtonIcon from "@/components/ui/buttons/ButtonIcon";
+import noprofile from "@assets/user/noprofile.png";
 
 function HeaderButtons({ isOpen, setIsOpen }) {
   const { user, userData, authIsReady } = useAuthContext();

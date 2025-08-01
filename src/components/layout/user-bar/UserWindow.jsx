@@ -43,7 +43,10 @@ function UserWindow({ imageURL, fullName, email, verfied = true }) {
             </div>
           </div>
           <div className="p-4 flex flex-col gap-2 py-6 user-links text-sm text-slate-800 dark:text-white transition-colors duration-150">
-            <Link className="flex items-center gap-4 hover:bg-slate-800/10 p-2 rounded-md transition-colors duration-150">
+            <Link
+              to={"/user"}
+              className="flex items-center gap-4 hover:bg-slate-800/10 p-2 rounded-md transition-colors duration-150"
+            >
               <GoPerson size={20} className="dark:text-gary-200" />
               Profile
             </Link>

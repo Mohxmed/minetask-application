@@ -1,3 +1,4 @@
+import LoadingPage from "@/components/ui/loading/LoadingPage";
 import { auth } from "@/firebase/firebase";
 import { getUserById } from "@/services/database/dbServices";
 import { onAuthStateChanged } from "firebase/auth";
@@ -29,7 +30,7 @@ function AuthProvider({ children }) {
 
   return (
     <authContext.Provider value={{ user, authIsReady, userData }}>
-      {children}
+      {authIsReady ? children : <LoadingPage />}
     </authContext.Provider>
   );
 }

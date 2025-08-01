@@ -25,7 +25,7 @@
   --color-secondary: var(--color-secondary);
   --color-background: var(--color-background);
   --color-icon: var(--color-main-text);
-  --color-lowBackground: var(--color-low-background);
+  --color-lowBackground: var(--color-lowBackground);
 }
 
 @layer base {

@@ -9,8 +9,8 @@ function HeaderLink({ text, link, icon }) {
         className={({ isActive }) =>
           `block w-full px-2 py-1 transition-all duration-300 ${
             isActive
-              ? "text-primary font-semibold"
-              : "text-gray-600 dark:text-gray-100 dark:hover:text-white/70  hover:text-gray-800"
+              ? "text-primary"
+              : "text-gray-600 dark:text-gray-100 dark:hover:text-white/70  hover:opacity-80"
           }`
         }
       >

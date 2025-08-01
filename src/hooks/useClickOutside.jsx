@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router";
 
 export default function useClickOutside(ref, handler) {
+  const location = useLocation();
   useEffect(() => {
     const listener = (event) => {
       if (!ref.current || ref.current.contains(event.target)) return;
@@ -12,4 +14,8 @@ export default function useClickOutside(ref, handler) {
       document.removeEventListener("mousedown", listener);
     };
   }, [ref, handler]);
+
+  useEffect(() => {
+    handler();
+  }, [location.pathname]);
 }

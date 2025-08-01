@@ -14,7 +14,7 @@ import useGoogleAuth from "../hooks/useGoogleAuth";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "../schema/schema";
-import { useEffect } from "react";
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 const LoginForm = () => {
   const { handleLogin, isLoading, error } = useLogin();
@@ -32,6 +32,8 @@ const LoginForm = () => {
     handleLogin(email, password);
   };
 
+  const [storedValue] = useLocalStorage("darkMode");
+  const isDark = storedValue;
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -39,7 +41,6 @@ const LoginForm = () => {
           mx: "auto",
           p: 4,
           borderRadius: 2,
-          backgroundColor: "background.paper",
         }}
       >
         <form onSubmit={handleSubmit(onSumbit)}>
@@ -47,7 +48,21 @@ const LoginForm = () => {
             label="Email Address"
             type="email"
             variant="standard"
-            sx={{ mt: 2 }}
+            sx={{
+              mt: 2,
+              input: {
+                color: isDark ? "#ffffff" : "#000000",
+              },
+              label: {
+                color: isDark ? "#ffffff" : "#000000",
+              },
+              "& .MuiInput-underline:before": {
+                borderBottomColor: isDark ? "#ffffff" : "#000000",
+              },
+              "& .MuiInput-underline:hover:before": {
+                borderBottomColor: isDark ? "#ffffff" : "#000000",
+              },
+            }}
             fullWidth
             {...register("email", {
               value: sessionStorage.getItem("email") || "Mhmd@gmail.com",
@@ -59,7 +74,21 @@ const LoginForm = () => {
             label="Password"
             type="password"
             variant="standard"
-            sx={{ mt: 2 }}
+            sx={{
+              mt: 2,
+              input: {
+                color: isDark ? "#ffffff" : "#000000",
+              },
+              label: {
+                color: isDark ? "#ffffff" : "#000000",
+              },
+              "& .MuiInput-underline:before": {
+                borderBottomColor: isDark ? "#ffffff" : "#000000",
+              },
+              "& .MuiInput-underline:hover:before": {
+                borderBottomColor: isDark ? "#ffffff" : "#000000",
+              },
+            }}
             fullWidth
             {...register("password", {
               value: sessionStorage.getItem("password") || "12345678",

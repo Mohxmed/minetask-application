@@ -3,8 +3,8 @@ import { FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 
 function Footer() {
   return (
-    <div className="h-14 w-full gap-2 px-6 flex-col flex justify-center items-center border-t border-t-gray-200 dark:border-none">
-      <div className="w-full container flex items-center justify-between gap-3 text-slate-400">
+    <div className="h-14 w-full gap-2 bg-white dark:bg-gray-950 px-6 flex-col flex justify-center items-center border-t border-t-gray-200 dark:border-t-primary/5">
+      <div className="w-full container flex items-center justify-between gap-3 text-slate-400 ">
         <p className="text-xs">
           A <b>Mhmd Amr's</b> Production @ 2025
         </p>
