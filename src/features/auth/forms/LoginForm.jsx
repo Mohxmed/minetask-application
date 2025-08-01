@@ -83,10 +83,10 @@ const LoginForm = () => {
                 color: isDark ? "#ffffff" : "#000000",
               },
               "& .MuiInput-underline:before": {
-                borderBottomColor: isDark ? "#ffffff" : "#000000",
+                borderBottomColor: isDark ? "#ffffff" : "#ffffff",
               },
               "& .MuiInput-underline:hover:before": {
-                borderBottomColor: isDark ? "#ffffff" : "#000000",
+                borderBottomColor: isDark ? "#ffffff" : "#ffffff",
               },
             }}
             fullWidth
