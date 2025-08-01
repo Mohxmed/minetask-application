@@ -13,7 +13,7 @@ const pageTransition = {
 const AnimatedRightPage = ({ children }) => {
   return (
     <>
-      <div className="fixed inset-0 pattern bg-primary backdrop-blur-sm z-30"></div>
+      <div className="fixed inset-0 pattern bg-primary dark:bg-slate-950/20 z-30"></div>
       <motion.div
         initial={pageTransition.initial}
         animate={pageTransition.animate}
