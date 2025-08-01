@@ -4,19 +4,22 @@
 :root {
   --color-primary: #546fff;
   --color-secondary: #00c55b;
-  --color-heading: #1d293d;
   --color-background: #ffffff;
-  --color-icon: #454545;
-  --color-lowBackground: #f2f2f2;
+  --color-text: #000000
+  --color-heading: #1d293d;
+  --color-lowlight: #dee5ec;
+  --color-lowlight-hover: #b3c1ce;
 }
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Dark */
 .dark {
   --color-primary: #546fff;
+  --color-text: #ffffff
   --color-background: #060b1b;
   --color-icon: #ffffff;
-  --color-lowBackground: #0b0f20;
+  --color-lowlight: #131a32;
+  --color-lowlight-hover: #0a1023;
 }
 
 /* Tailwind Theme */

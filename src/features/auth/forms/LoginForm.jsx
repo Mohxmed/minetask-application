@@ -42,9 +42,7 @@ const LoginForm = () => {
           label="Email Address"
           type="email"
           variant="standard"
-          sx={{
-            mt: 2,
-          }}
+          sx={{ mt: 2 }}
           fullWidth
           {...register("email", {
             value: sessionStorage.getItem("email") || "Mhmd@gmail.com",
@@ -63,7 +61,7 @@ const LoginForm = () => {
           })}
           error={!!errors.password}
           helperText={errors.password?.message}
-        />{" "}
+        />
         <Button
           type="submit"
           variant="contained"

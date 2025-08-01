@@ -17,8 +17,10 @@ function AuthProvider({ children }) {
       if (user) {
         const userFromDB = await getUserById(user.uid);
         setUserData(userFromDB);
-        console.log(user); // هنا خلاص القيمة اتحدثت فعليًا
-        console.log(userFromDB); // هنا خلاص القيمة اتحدثت فعليًا
+        // TODO: Logs for debug (Remove)
+        console.log(user);
+        console.log(userFromDB);
+        //
       } else {
         setUserData(null);
       }

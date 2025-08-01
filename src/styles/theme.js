@@ -37,5 +37,39 @@ export const getTheme = (mode = "light") =>
           },
         },
       },
+      MuiTextField: {
+        styleOverrides: {
+          root: {
+            "& input": {
+              color: mode === "dark" ? "#ffffff" : "#000000",
+            },
+            // لون الـ label
+            "& label": {
+              color: mode === "dark" ? "#aaaaaa" : "#555555",
+            },
+            // لون الخط تحت الحقل
+            "& .MuiInput-underline:before": {
+              borderBottomColor: mode === "dark" ? "#444" : "#ccc",
+            },
+            "& .MuiInput-underline:hover:before": {
+              borderBottomColor: mode === "dark" ? "#666" : "#888",
+            },
+          },
+        },
+      },
+      MuiIconButton: {
+        styleOverrides: {
+          root: {
+            backgroundColor: "var(--color-lowlight)",
+            borderRadius: 12,
+            padding: 8,
+            transition: "background-color 0.3s",
+            color: "var(--color-text)",
+            "&:hover": {
+              backgroundColor: "var(--color-lowlight-hover)",
+            },
+          },
+        },
+      },
     },
   });
